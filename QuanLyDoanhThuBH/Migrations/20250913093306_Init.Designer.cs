@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using QuanLyDoanhThuBH.Data;
 
@@ -11,9 +12,11 @@ using QuanLyDoanhThuBH.Data;
 namespace QuanLyDoanhThuBH.Migrations
 {
     [DbContext(typeof(QuanLyContext))]
-    partial class QuanLyContextModelSnapshot : ModelSnapshot
+    [Migration("20250913093306_Init")]
+    partial class Init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -41,7 +44,7 @@ namespace QuanLyDoanhThuBH.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("DoanhThu", (string)null);
+                    b.ToTable("DoanhThu");
                 });
 
             modelBuilder.Entity("QuanLyDoanhThuBH.Models.HoaDon", b =>
@@ -76,7 +79,7 @@ namespace QuanLyDoanhThuBH.Migrations
 
                     b.HasIndex("MaSP");
 
-                    b.ToTable("HoaDon", (string)null);
+                    b.ToTable("HoaDon");
                 });
 
             modelBuilder.Entity("QuanLyDoanhThuBH.Models.KhachHang", b =>
@@ -106,7 +109,7 @@ namespace QuanLyDoanhThuBH.Migrations
 
                     b.HasKey("MaKH");
 
-                    b.ToTable("KhachHang", (string)null);
+                    b.ToTable("KhachHang");
                 });
 
             modelBuilder.Entity("QuanLyDoanhThuBH.Models.SanPham", b =>
@@ -130,7 +133,7 @@ namespace QuanLyDoanhThuBH.Migrations
 
                     b.HasKey("MaSP");
 
-                    b.ToTable("SanPham", (string)null);
+                    b.ToTable("SanPham");
                 });
 
             modelBuilder.Entity("QuanLyDoanhThuBH.Models.TaiKhoan", b =>
@@ -153,7 +156,7 @@ namespace QuanLyDoanhThuBH.Migrations
 
                     b.HasKey("UserID");
 
-                    b.ToTable("TaiKhoan", (string)null);
+                    b.ToTable("TaiKhoan");
                 });
 
             modelBuilder.Entity("QuanLyDoanhThuBH.Models.HoaDon", b =>
